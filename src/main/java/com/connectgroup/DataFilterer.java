@@ -53,7 +53,7 @@ public class DataFilterer extends AbstractDataFilterer {
         String[] p = line.split(COMMA);
         DataFilterDo item = new DataFilterDo();
         for (String lineItem : p) {
-            item = AbstractDataFilterer.populate(item, lineItem);
+            item =populate(item, lineItem);
         }
         return item;
     };
