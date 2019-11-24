@@ -1,0 +1,14 @@
+# file: ~/.gitignore_global
+.DS_Store
+.idea
+
+
+target/
+*.class
+*.jar
+*.war
+*.ear
+*.logs
+*.iml
+.idea/
+.eclipse
