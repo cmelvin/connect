@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
-public class DataFilterer extends BaseDataFilterer {
+public class DataFilterer extends AbstractDataFilterer {
 
     private static final String COMMA = ",";
 
@@ -53,7 +53,7 @@ public class DataFilterer extends BaseDataFilterer {
         String[] p = line.split(COMMA);
         DataFilterDo item = new DataFilterDo();
         for (String lineItem : p) {
-            item = BaseDataFilterer.populate(item, lineItem);
+            item = AbstractDataFilterer.populate(item, lineItem);
         }
         return item;
     };

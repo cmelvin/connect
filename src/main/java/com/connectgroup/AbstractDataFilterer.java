@@ -5,7 +5,7 @@ import com.connectgroup.model.DataFilterDo;
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 
-public class BaseDataFilterer {
+public abstract class AbstractDataFilterer {
 
     private static long MINIMUM_TIMESTAMP = 0;
 
