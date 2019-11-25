@@ -9,7 +9,7 @@ public abstract class AbstractDataFilterer {
 
     private static long MINIMUM_TIMESTAMP = 0;
 
-    public AbstractDataFilterer() {
+    protected AbstractDataFilterer() {
     }
 
     static {
