@@ -9,8 +9,6 @@ public abstract class AbstractDataFilterer {
 
     private static long MINIMUM_TIMESTAMP = 0;
 
-    protected AbstractDataFilterer() {
-    }
 
     static {
         MINIMUM_TIMESTAMP = ZonedDateTime.parse(

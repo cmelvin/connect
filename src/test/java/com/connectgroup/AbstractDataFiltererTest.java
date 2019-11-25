@@ -18,8 +18,6 @@ public abstract class AbstractDataFiltererTest {
     protected static final String GB="GB";
     protected static final String KS="KS";
 
-    protected AbstractDataFiltererTest() {
-    }
 
     protected List<DataFilterDo> createDataFilterDoSingleCountry() {
         List<DataFilterDo> dataFilterDos = new ArrayList<>();
