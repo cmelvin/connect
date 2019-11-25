@@ -40,16 +40,16 @@ public class DataFilterer extends AbstractDataFilterer {
     }
 
     private static List<DataFilterDo> convertInputFile(final Reader source) {
-        List<DataFilterDo> inputList = new ArrayList<DataFilterDo>();
+        List<DataFilterDo> inputList = new ArrayList<>();
         try (BufferedReader br = new BufferedReader(source)) {
             inputList = br.lines().skip(1).map(mapToItem).collect(Collectors.toList());
         } catch (IOException e) {
-            e.printStackTrace();
+           //do nothing
         }
         return inputList;
     }
 
-    private static Function<String, DataFilterDo> mapToItem = (line) -> {
+    private static Function<String, DataFilterDo> mapToItem = line -> {
         String[] p = line.split(COMMA);
         DataFilterDo item = new DataFilterDo();
         for (String lineItem : p) {
