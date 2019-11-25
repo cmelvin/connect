@@ -33,7 +33,7 @@ public abstract class AbstractDataFilterer {
         return dataFilterDo;
     }
 
-    private static final boolean checkIfDataLineIsRequestTimeValidFormat(String dataValue) {
+    private static boolean checkIfDataLineIsRequestTimeValidFormat(String dataValue) {
         try {
             Long times = Long.valueOf(dataValue);
             return (times >= MINIMUM_TIMESTAMP) && (times <= System.currentTimeMillis());
@@ -43,7 +43,7 @@ public abstract class AbstractDataFilterer {
         return false;
     }
 
-    private static final boolean checkIfDataLineIsCountryCodeValidFormat(String dataValue) {
+    private static boolean checkIfDataLineIsCountryCodeValidFormat(String dataValue) {
         try {
             return dataValue.chars().allMatch(Character::isLetter);
         } catch (Exception e) {
