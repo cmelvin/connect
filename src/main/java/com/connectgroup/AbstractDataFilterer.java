@@ -20,7 +20,7 @@ public abstract class AbstractDataFilterer {
     }
 
 
-    protected static DataFilterDo populate(DataFilterDo dataFilterDo, String dataLine) {
+    protected static DataFilterDo populate(DataFilterDo dataFilterDo, final String dataLine) {
         if (dataLine != null && dataLine.trim().length() > 0) {
             if (checkIfDataLineIsRequestTimeValidFormat(dataLine)) {
                 dataFilterDo.setRequestTime(Long.valueOf(dataLine));
@@ -33,7 +33,7 @@ public abstract class AbstractDataFilterer {
         return dataFilterDo;
     }
 
-    private static boolean checkIfDataLineIsRequestTimeValidFormat(String dataValue) {
+    private static boolean checkIfDataLineIsRequestTimeValidFormat(final String dataValue) {
         try {
             Long times = Long.valueOf(dataValue);
             return (times >= MINIMUM_TIMESTAMP) && (times <= System.currentTimeMillis());
@@ -43,7 +43,7 @@ public abstract class AbstractDataFilterer {
         return false;
     }
 
-    private static boolean checkIfDataLineIsCountryCodeValidFormat(String dataValue) {
+    private static boolean checkIfDataLineIsCountryCodeValidFormat(final String dataValue) {
         try {
             return dataValue.chars().allMatch(Character::isLetter);
         } catch (Exception e) {
